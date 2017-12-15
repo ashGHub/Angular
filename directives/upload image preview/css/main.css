@@ -1,0 +1,16 @@
+.row-inline{
+  display: flex;
+}
+
+button{
+  display: block;
+  margin: 20px 0 20px 0;
+}
+
+.preview-image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 236px;
+    height: 300px;
+}

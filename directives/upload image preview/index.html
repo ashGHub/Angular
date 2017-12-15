@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Image preview</title>
+
+  <link rel="stylesheet" href="css/main.css">
+  <script src="../../lib/angular.min.js"></script>
+</head>
+<body ng-app="app" ng-controller="upload">
+
+  <!-- 
+  	ng-submit prevents the default action (which for form means sending the request to the server and reloading the current page), but only if the form does not contain action, data-action, or x-action attributes. [source.. ng-submit documentation]
+  -->
+  <form class="row-inline" ng-submit="uploadImage()">
+
+    <div>
+      <!-- input file -->
+      <input type="file" img-upload-preview callback="setContent(content, preview)">
+
+      <button type="submit">Upload</button>
+    </div>
+
+    <!-- image preview -->
+    <div class="preview-image" dynamic-bg source="{{fileContentPreveiw}}"></div>
+
+  </form>
+
+  <script src="js/app.js"></script>
+  <script src="js/upload.controller.js"></script>
+  <script src="js/img-upload-preview.directive.js"></script>
+  <script src="js/dynamic-bg.directive.js"></script>
+</body>
+</html>
